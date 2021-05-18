@@ -69,19 +69,6 @@ namespace AOE2DiscordBot
             //var _config = new DiscordSocketConfig { MessageCacheSize = 100 };
             //client = new DiscordSocketClient(_config);
 
-            //await client.LoginAsync(TokenType.Bot, Environment.GetEnvironmentVariable("DiscordToken"));
-            //await client.StartAsync();
-
-            //client.MessageUpdated += MessageUpdated;
-            //client.Ready += () =>
-            //{
-            //    Console.WriteLine("Bot is connected!");
-            //    return Task.CompletedTask;
-            //};
-
-
-            //await Task.Delay(-1);
-
             // Centralize the logic for commands into a separate method.
             await InitCommands();
 
@@ -89,7 +76,19 @@ namespace AOE2DiscordBot
             await client.LoginAsync(TokenType.Bot,
                 // < DO NOT HARDCODE YOUR TOKEN >
                 Environment.GetEnvironmentVariable("DiscordToken"));
+
+            //client.Ready += async () => 
             await client.StartAsync();
+
+            client.Ready += () =>
+            {
+                Console.WriteLine("Bot is connected!");
+                return Task.CompletedTask;
+            };
+
+            //await Task.Delay(-1);
+
+
 
             // Wait infinitely so your bot actually stays connected.
             await Task.Delay(Timeout.Infinite);
