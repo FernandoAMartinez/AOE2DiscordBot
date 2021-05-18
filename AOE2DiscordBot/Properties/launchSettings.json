@@ -3,13 +3,13 @@
     "EnviromentDevelopment": {
       "commandName": "Executable",
       "environmentVariables": {
-        "DiscordToken": "ODQ0MjkyMTcyMTk4NTc2MTQ4.YKQSXA.XJj3OXnolf5ESx-aogZZtz7uj_I"
+        "DiscordToken": ""
       }
     },
     "AOE2BotDeploy": {
       "commandName": "Project",
       "environmentVariables": {
-        "DiscordToken": "ODQ0MjkyMTcyMTk4NTc2MTQ4.YKQSXA.XJj3OXnolf5ESx-aogZZtz7uj_I"
+        "DiscordToken": ""
       }
     }
   }
